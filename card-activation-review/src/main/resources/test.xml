@@ -1,0 +1,22 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:ns1="http://schemas.tranzaxis.com/tran.wsdl" xmlns:ns2="http://schemas.tranzaxis.com/tran.xsd"
+                   xmlns:ns3="http://schemas.tranzaxis.com/tokens-admin.xsd">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns1:Tran>
+            <ns2:Request InitiatorRid="TEST" IsAdvice="false" IsPartial="false" IsReversal="false" Kind="ModifyToken"
+                         LifePhase="Single" PreprocessOnly="false" ProcessorInstId="10"
+                         TextMess="Programming Test Payment">
+                <ns2:Specific>
+                    <ns2:Admin ObjectMustExist="true">
+                        <ns2:Token Kind="Card">
+                            <ns3:Card FindByPan="true" Pan="5374621231070087">
+                                <ns3:Status>Active</ns3:Status>
+                            </ns3:Card>
+                        </ns2:Token>
+                    </ns2:Admin>
+                </ns2:Specific>
+            </ns2:Request>
+        </ns1:Tran>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
